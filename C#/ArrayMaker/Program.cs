@@ -46,10 +46,14 @@ namespace ArrayMaker
         /// <param name="grid">the 2d array to print</param>
         public static void PrintGrid(int[,] grid)
         {
-                int t = 0;
-            for (int i = 0; i < grid.Length; i++) // Column population
+
+            for (int i = 0; i < grid.GetLength(1); i++) // Column population
             {
-                Console.WriteLine($"{grid[t, i]}");
+                for (int t = 0; t < grid.GetLength(0); t++) // Row population
+                {
+                    Console.WriteLine($"{grid[t, i]}");
+                }
+                
             }
         }
     }
